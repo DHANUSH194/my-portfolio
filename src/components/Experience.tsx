@@ -21,11 +21,11 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section id="experience" style={{
-      padding: '6rem 2rem',
+    <section id="experience" className="experience-section" style={{
+      padding: '4rem 1.5rem',
       background: 'var(--bg-secondary)',
     }}>
-      <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+      <div className="section-container" style={{ maxWidth: '900px', margin: '0 auto' }}>
         <h2 style={{
           fontSize: '2.5rem',
           fontWeight: 700,
@@ -44,9 +44,9 @@ export default function Experience() {
         </p>
 
         {/* Timeline */}
-        <div style={{
+        <div className="experience-timeline" style={{
           position: 'relative',
-          paddingLeft: '2rem',
+          paddingLeft: '1rem',
         }}>
           {/* Vertical line */}
           <div style={{
@@ -60,11 +60,7 @@ export default function Experience() {
           }} />
 
           {experiences.map((exp, index) => (
-            <div key={index} style={{
-              position: 'relative',
-              marginBottom: '2.5rem',
-              paddingLeft: '1.5rem',
-            }}>
+            <div key={index} className="experience-item">
               {/* Timeline dot */}
               <div style={{
                 position: 'absolute',
@@ -79,13 +75,7 @@ export default function Experience() {
               }} />
 
               {/* Card */}
-              <div style={{
-                padding: '1.75rem',
-                background: 'var(--bg-card)',
-                borderRadius: 'var(--radius-lg)',
-                border: '1px solid var(--border)',
-                transition: 'var(--transition)',
-              }}
+              <div className="experience-card"
               onMouseEnter={e => {
                 e.currentTarget.style.borderColor = 'var(--accent)'
                 e.currentTarget.style.transform = 'translateX(5px)'
@@ -97,7 +87,7 @@ export default function Experience() {
                 e.currentTarget.style.boxShadow = 'none'
               }}
               >
-                <div style={{
+                <div className="experience-card-header" style={{
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'flex-start',

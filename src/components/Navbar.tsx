@@ -47,7 +47,6 @@ export default function Navbar() {
       </a>
 
       <div style={{
-        display: 'flex',
         gap: '2rem',
         alignItems: 'center',
       }} className="nav-links">
@@ -102,7 +101,6 @@ export default function Navbar() {
       <button
         onClick={() => setMobileOpen(!mobileOpen)}
         style={{
-          display: 'none',
           background: 'none',
           border: 'none',
           color: 'var(--text-primary)',
@@ -116,18 +114,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div style={{
-          position: 'fixed',
-          top: '70px',
-          left: 0,
-          right: 0,
-          background: 'var(--bg-secondary)',
-          padding: '2rem',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '1.5rem',
-          borderBottom: '1px solid var(--border)',
-        }}>
+        <div className="mobile-menu">
           {navLinks.map(link => (
             <a key={link.href} href={link.href} onClick={() => setMobileOpen(false)} style={{
               color: 'var(--text-secondary)',
